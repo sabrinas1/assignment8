@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <title>Jade Delight</title>
 </head>
 
@@ -39,7 +40,7 @@ function td(content, className="")
 function updateCost(index)
 {
 	console.log(menuItems[index].name);
-	quantity = document.getElementById(menuItems[index].name).selectQuantity.value;
+	quantity = $document.getElementById(menuItems[index].name).selectQuantity.val();
 	console.log(quantity);
 	total = (quantity * menuItems[index].cost).toFixed(2);
 	console.log(total);
@@ -90,7 +91,7 @@ function updateTotal()
 	  s += td(makeSelect("quan" + i, 0, 10),"selectQuantity");
 	  s += td(menuItems[i].name, "itemName");
 	  s += td("$" +menuItems[i].cost.toFixed(2), "cost");
-	  s += td("$<input type='text' name='cost'/>", "totalCost");
+	  s += td("$<input type='text' name='cost' value=0/>", "totalCost");
 	  s+= "</tr>";
   }
   document.writeln(s);
