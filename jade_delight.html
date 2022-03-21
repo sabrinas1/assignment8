@@ -86,13 +86,12 @@ function updateTotal()
   var s = "";
   for (i=0; i< menuItems.length; i++)
   {
-	  s += "<div id=" + i + " onmouseover='updateCost(" + i + ")'>";
-	  s += "<tr>";
+	  s += "<tr id=" + i + " onmouseover='updateCost(" + i + ")'>";
 	  s += td(makeSelect("quan" + i, 0, 10),"selectQuantity");
 	  s += td(menuItems[i].name, "itemName");
 	  s += td("$" +menuItems[i].cost.toFixed(2), "cost");
 	  s += td("$<input type='text' name='cost'/>", "totalCost");
-	  s+= "</tr></div>";
+	  s+= "</tr>";
   }
   document.writeln(s);
 </script>
