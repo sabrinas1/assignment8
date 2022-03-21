@@ -36,14 +36,14 @@ function td(content, className="")
 	return "<td class = '" + className + "'>" + content + "</td>";
 }
 
-function updateCost(menuItem)
+function updateCost(index)
 {
-	console.log(menuItem.name);
-	quantity = document.getElementById(menuItem.name).selectQuantity.value;
+	console.log(menuItems[index].name);
+	quantity = document.getElementById(menuItems[index].name).selectQuantity.value;
 	console.log(quantity);
-	total = (quantity * menuItem.cost).toFixed(2);
+	total = (quantity * menuItems[index].cost).toFixed(2);
 	console.log(total);
-	document.getElementById(menuItem.name).cost.value = total;
+	document.getElementById(menuItems[index].name).cost.value = total;
 	updateTotal();
 }
 
@@ -86,7 +86,7 @@ function updateTotal()
   var s = "";
   for (i=0; i< menuItems.length; i++)
   {
-	  s += "<div id=" + menuItems[i].name + " onmouseover='updateCost(" + menuItems[i] + ")'>";
+	  s += "<div id=" + i + " onmouseover='updateCost(" + i + ")'>";
 	  s += "<tr>";
 	  s += td(makeSelect("quan" + i, 0, 10),"selectQuantity");
 	  s += td(menuItems[i].name, "itemName");
