@@ -38,8 +38,8 @@ function td(content, className="")
 
 function updateCost(index)
 {
-	console.log(menuItems[index].name);
-	quantity = document.getElementById(menuItems[index].name).selectQuantity.value;
+	qname = "quan" + index;
+	quantity = document.getElementsByName(qname).value;
 	console.log(quantity);
 	total = (quantity * menuItems[index].cost).toFixed(2);
 	console.log(total);
@@ -51,7 +51,8 @@ function updateTotal()
 {
 	sum = 0;
 	for (i = 0; i < menuItems.length; i++) {
-		sum += menuItems[i].cost * document.getElementById(menuItems[i].name).selectQuantity.value;
+		qname = "quan" + i;
+		sum += menuItems[i].cost * document.getElementsByName(qname).value;
 		console.log(sum);
 	}
 	document.getElementById("subtotal").value = sum;
