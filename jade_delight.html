@@ -24,7 +24,7 @@ menuItems = new Array(
 function makeSelect(name, minRange, maxRange)
 {
 	var t= "";
-	t = "<select name='" + name + "' size='1' onclick='updateCost(name)'>";
+	t = "<select name='" + name + "' size='1'>";
 	for (j=minRange; j<=maxRange; j++)
 	   t += "<option>" + j + "</option>";
 	t+= "</select>"; 
@@ -36,16 +36,14 @@ function td(content, className="")
 	return "<td class = '" + className + "'>" + content + "</td>";
 }
 
-function updateCost(name)
+function updateCost(menuItem)
 {
-	console.log(name);
-	quantity = document.getElementsByName(name).value;
+	console.log(menuItem.name);
+	quantity = document.getElementById(menuItem.name).selectQuantity.value;
 	console.log(quantity);
-	index = name.replace(/[^0-9]/g, '');
-	console.log(menuItems[index].name);
-	total = (quantity * menuItems[index].cost).toFixed(2);
+	total = (quantity * menuItem.cost).toFixed(2);
 	console.log(total);
-	document.getElementsByName("cost").value = total;
+	document.getElementById(menuItem.name).cost.value = total;
 	updateTotal();
 }
 
@@ -53,7 +51,7 @@ function updateTotal()
 {
 	sum = 0;
 	for (i = 0; i < menuItems.length; i++) {
-		sum += menuItems[i].cost * document.getElementsByName("quan" + i).value;
+		sum += menuItems[i].cost * document.getElementById(menuItems[i].name).selectQuantity.value;
 		console.log(sum);
 	}
 	document.getElementById("subtotal").value = sum;
@@ -88,15 +86,17 @@ function updateTotal()
   var s = "";
   for (i=0; i< menuItems.length; i++)
   {
+	  s += "<div id='menuItems[i].name' onmouseover='updateCost(menuItems[i])'>";
 	  s += "<tr>";
 	  s += td(makeSelect("quan" + i, 0, 10),"selectQuantity");
 	  s += td(menuItems[i].name, "itemName");
 	  s += td("$" +menuItems[i].cost.toFixed(2), "cost");
 	  s += td("$<input type='text' name='cost'/>", "totalCost");
-	  s+= "</tr>";
+	  s+= "</tr></div>";
   }
   document.writeln(s);
 </script>
+</div>
 </table>
 <p class="subtotal totalSection"><label>Subtotal</label>: 
    $ <input type="text"  name='subtotal' id="subtotal" />
