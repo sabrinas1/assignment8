@@ -86,7 +86,7 @@ function updateTotal()
   var s = "";
   for (i=0; i< menuItems.length; i++)
   {
-	  s += "<div id='menuItems[i].name' onmouseover='updateCost(menuItems[i])'>";
+	  s += "<div id=" + menuItems[i].name + " onmouseover='updateCost(" + menuItems[i] + ")'>";
 	  s += "<tr>";
 	  s += td(makeSelect("quan" + i, 0, 10),"selectQuantity");
 	  s += td(menuItems[i].name, "itemName");
