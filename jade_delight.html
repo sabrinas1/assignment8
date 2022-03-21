@@ -51,9 +51,9 @@ function updateTotal()
 	for (i = 0; i < menuItems.length; i++) {
 		sum += menuItems[i].cost * document.getElementsByName("quan" + i).value;
 	}
-	document.getElementsById("subtotal").value = sum;
-	document.getElementsById("tax").value = (0.0625 * document.getElementById("subtotal").value).toFixed(2);
-	document.getElementsById("total").value = document.getElementById("subtotal").value + document.getElementById("tax").value;
+	document.getElementById("subtotal").value = sum;
+	document.getElementById("tax").value = (0.0625 * document.getElementById("subtotal").value).toFixed(2);
+	document.getElementById("total").value = document.getElementById("subtotal").value + document.getElementById("tax").value;
 }
 	
 </script>
