@@ -41,7 +41,7 @@ function updateCost(name)
 	quantity = document.getElementsByName(name).value;
 	index = name.replace(/[^0-9]/g, '');
 	total = (quantity * menuItems[index].cost).toFixed(2);
-	document.getElementsByName("cost" + index).value = total;
+	document.getElementsByName("cost").value = total;
 	updateTotal();
 }
 
@@ -87,7 +87,7 @@ function updateTotal()
 	  s += td(makeSelect("quan" + i, 0, 10),"selectQuantity");
 	  s += td(menuItems[i].name, "itemName");
 	  s += td("$" +menuItems[i].cost.toFixed(2), "cost");
-	  s += td("$<input type='text' name='cost' + i/>", "totalCost");
+	  s += td("$<input type='text' name=('cost' + i)/>", "totalCost");
 	  s+= "</tr>";
   }
   document.writeln(s);
