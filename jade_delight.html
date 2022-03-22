@@ -38,6 +38,7 @@ function td(content, className="")
 
 function updateCost(qname)
 {
+	console.log(qname);
 	index = parseInt(String(qname).replace(/[^0-9]/g, ""));
 	quantity = document.getElementsByName(qname).value;
 	console.log(index);
