@@ -38,13 +38,10 @@ function td(content, className="")
 
 function updateCost(qname)
 {
-	console.log(qname + "; " + qname.name);
 	index = parseInt(String(qname.name).replace(/[^0-9]/g, ""));
 	quantity = document.getElementsByName(qname).value;
-	console.log(index);
 	total = (quantity * menuItems[index].cost).toFixed(2);
-	//console.log(total);
-	tcost = document.getElementById(menuItems[index].name).totalCost;
+	tcost = document.getElementById(index).totalCost;
 	tcost.value = total;
 	updateTotal();
 }
