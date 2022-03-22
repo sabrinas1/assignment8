@@ -40,7 +40,7 @@ function updateCost(qname)
 {
 	index = parseInt(String(qname).replace(/[^0-9]/g, ""));
 	quantity = document.getElementsByName(qname).value;
-	//console.log(quantity);
+	console.log(index);
 	total = (quantity * menuItems[index].cost).toFixed(2);
 	//console.log(total);
 	tcost = document.getElementById(menuItems[index].name).totalCost;
