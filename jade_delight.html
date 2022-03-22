@@ -40,10 +40,11 @@ function updateCost(index)
 {
 	qname = "quan" + index;
 	quantity = document.getElementsByName(qname).value;
-	console.log(quantity);
+	//console.log(quantity);
 	total = (quantity * menuItems[index].cost).toFixed(2);
-	console.log(total);
-	document.getElementById(menuItems[index].name).cost.value = total;
+	//console.log(total);
+	cost = document.getElementById(menuItems[index].name).totalCost;
+	cost.value = total;
 	updateTotal();
 }
 
@@ -53,7 +54,7 @@ function updateTotal()
 	for (i = 0; i < menuItems.length; i++) {
 		qname = "quan" + i;
 		sum += menuItems[i].cost * document.getElementsByName(qname).value;
-		console.log(sum);
+		//console.log(sum);
 	}
 	document.getElementById("subtotal").value = sum;
 	document.getElementById("tax").value = (0.0625 * document.getElementById("subtotal").value).toFixed(2);
@@ -91,7 +92,7 @@ function updateTotal()
 	  s += td(makeSelect("quan" + i, 0, 10),"selectQuantity");
 	  s += td(menuItems[i].name, "itemName");
 	  s += td("$" +menuItems[i].cost.toFixed(2), "cost");
-	  s += td("$<input type='text' name='cost' value=updateCost(" + i + ") />", "totalCost");
+	  s += td("$<input type='text' name='cost' value=0 />", "totalCost");
 	  s+= "</tr>";
   }
   document.writeln(s);
