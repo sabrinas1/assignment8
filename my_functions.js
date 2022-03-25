@@ -18,7 +18,7 @@ function reveal(obj = {})
     }
 }
 
-function updateCost(qname)
+function updateCost(qname = "")
 {
     index = parseInt(String((qname.name).replace(/[^0-9]/g, "")));
     quantity = document.getElementsByName(qname).value;
