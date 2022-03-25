@@ -6,6 +6,14 @@ for (var i = 0; i < menuItems.length; i++) {
     document.getElementsByName("quan" + i).addEventListener("change", updateCost("quan" + i));
 }
 
+document.getElementsByValue("delivery").addEventListener("click", reveal());
+
+function reveal()
+{
+    document.getElementsByName("street").hidden = false;
+    document.getElementsByName("city").hidden = true;
+}
+
 function updateCost(qname)
 {
     index = parseInt(String(qname.name).replace(/[^0-9]/g, ""));
