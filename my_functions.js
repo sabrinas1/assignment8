@@ -6,12 +6,16 @@ for (var i = 0; i < menuItems.length; i++) {
     document.getElementsByName("quan" + i).addEventListener("change", updateCost("quan" + i));
 }
 
-document.getElementsByValue("delivery").addEventListener("click", reveal());
+document.getElementsByValue("delivery").addEventListener("load", reveal(document.getElementsByClassName("userInfo address")));
+document.getElementsByValue("delivery").addEventListener("click", reveal(document.getElementsByClassName("userInfo address")));
 
-function reveal()
+function reveal(obj = {})
 {
-    document.getElementsByClassName("userInfo address").style.display = "block";
-}
+    if (obj.style.display != "none") {
+        obj.style.display = "none";
+    } else if (obj.style.display === "none") {
+        obj.style.display = "block";
+    }
 
 function updateCost(qname)
 {
