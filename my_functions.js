@@ -1,3 +1,4 @@
+
 menuItems = new Array(
     new MenuItem("Chicken Chop Suey", 4.5),
     new MenuItem("Sweet and Sour Pork", 6.25),
