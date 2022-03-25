@@ -1,3 +1,7 @@
+function MenuItem(name, cost) {
+    this.name = name;
+    this.cost = cost;
+}
 
 var menuItems = new Array(
     new MenuItem("Chicken Chop Suey", 4.5),
