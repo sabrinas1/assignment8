@@ -10,7 +10,7 @@ document.getElementsByValue("delivery").addEventListener("click", reveal());
 
 function reveal()
 {
-    document.getElementsByClassName("userInfo address")..setAttribute("type", "text");
+    document.getElementsByClassName("userInfo address").style.display = "block";
 }
 
 function updateCost(qname)
