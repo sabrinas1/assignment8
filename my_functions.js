@@ -16,6 +16,7 @@ function reveal(obj = {})
     } else if (obj.style.display === "none") {
         obj.style.display = "block";
     }
+}
 
 function updateCost(qname)
 {
