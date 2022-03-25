@@ -10,8 +10,7 @@ document.getElementsByValue("delivery").addEventListener("click", reveal());
 
 function reveal()
 {
-    document.getElementsByName("street").hidden = false;
-    document.getElementsByName("city").hidden = true;
+    document.getElementsByClassName("userInfo address")..setAttribute("type", "text");
 }
 
 function updateCost(qname)
