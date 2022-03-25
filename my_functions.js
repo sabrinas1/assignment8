@@ -1,3 +1,4 @@
+
 function MenuItem(name, cost) {
     this.name = name;
     this.cost = cost;
