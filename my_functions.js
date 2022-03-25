@@ -1,3 +1,4 @@
+/*my functions to implement Jade Delight assignment specifications*/
 
 function MenuItem(name, cost) {
     this.name = name;
