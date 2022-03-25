@@ -1,18 +1,6 @@
 /*my functions to implement Jade Delight assignment specifications*/
 
-// var menuItems = new Array(
-//     new MenuItem("Chicken Chop Suey", 4.5),
-//     new MenuItem("Sweet and Sour Pork", 6.25),
-//     new MenuItem("Shrimp Lo Mein", 6.25),
-//     new MenuItem("Moo Shi Chicken", 7.5),
-//     new MenuItem("Fried Rice", 2.85)
-// );
 
-
-// function MenuItem(name, cost) {
-//     this.name = name;
-//     this.cost = cost;
-// }
 
 for (var i = 0; i < menuItems.length; i++) {
     document.getElementsByName("quan" + i).addEventListener("change", updateCost("quan" + i));
