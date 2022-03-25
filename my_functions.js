@@ -1,6 +1,7 @@
 /*my functions to implement Jade Delight assignment specifications*/
 
-function MenuItem(name, cost) {
+function MenuItem(name, cost)
+{
     this.name = name;
     this.cost = cost;
 }
@@ -17,7 +18,8 @@ for (var i = 0; i < menuItems.length; i++) {
     document.getElementsByName("quan" + i).addEventListener("change", updateCost("quan" + i));
 }
 
-function updateCost(qname) {
+function updateCost(qname)
+{
     index = parseInt(String(qname.name).replace(/[^0-9]/g, ""));
     quantity = document.getElementsByName(qname).value;
     total = (quantity * menuItems[index].cost).toFixed(2);
@@ -26,7 +28,8 @@ function updateCost(qname) {
     updateTotal();
 }
 
-function updateTotal() {
+function updateTotal()
+{
     sum = 0;
     for (i = 0; i < menuItems.length; i++) {
         qname = "quan" + i;
