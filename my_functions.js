@@ -25,7 +25,7 @@ function updateCost(qname = "")
     console.log(menuItems[index]);
     total = (quantity * menuItems[index].cost).toFixed(2);
     tcost = document.getElementById(index).totalCost;
-    tcost.value = total;
+    tcost.setAttribute("value", total);
     updateTotal();
 }
 
@@ -36,7 +36,8 @@ function updateTotal()
         qname = "quan" + i;
         sum += menuItems[i].cost * document.getElementsByName(qname).value;
     }
-    document.getElementById("subtotal").value = sum;
-    document.getElementById("tax").value = (0.0625 * document.getElementById("subtotal").value).toFixed(2);
-    document.getElementById("total").value = document.getElementById("subtotal").value + document.getElementById("tax").value;
+    document.getElementById("subtotal").setAttribute("value", sum);
+    ttax = (0.0625 * document.getElementById("subtotal").value).toFixed(2);
+    document.getElementById("tax").setAttribute("value", ttax);
+    document.getElementById("total").setAttribute("value", sum + ttax);
 }
