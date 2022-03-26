@@ -5,8 +5,8 @@ for (var i = 0; i < menuItems.length; i++) {
     quans[i].addEventListener("change", updateCost("quan" + i));
 }
 
-document.getElementsByValue("delivery").addEventListener("load", reveal(document.getElementsByClassName("userInfo address")));
-document.getElementsByValue("delivery").addEventListener("click", reveal(document.getElementsByClassName("userInfo address")));
+document.querySelector("input[value='delivery'").addEventListener("load", reveal(document.getElementsByClassName("userInfo address")));
+document.querySelector("input[value='delivery'").addEventListener("click", reveal(document.getElementsByClassName("userInfo address")));
 
 function reveal(obj = {})
 {
