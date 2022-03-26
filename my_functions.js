@@ -23,7 +23,7 @@ function updateCost(qname = "")
     quantity = document.getElementById(qname).value;
     total = (quantity * menuItems[index].cost).toFixed(2);
     tcost = document.getElementById(index);
-    console.log(tcost + "; " + tcost.totalCost + "; " + tcost.totalCost.value);
+    console.log(tcost + "; " + tcost.totalCost);
     tcost.totalCost.setAttribute("value", total);
     updateTotal();
 }
