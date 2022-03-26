@@ -5,8 +5,8 @@ for (var i = 0; i < menuItems.length; i++) {
     document.getElementById(qname).addEventListener("change", updateCost(qname));
 }
 
-document.querySelector("input[value='delivery'").addEventListener("load", reveal(document.getElementsByClassName("userInfo address")));
-document.querySelector("input[value='delivery'").addEventListener("click", reveal(document.getElementsByClassName("userInfo address")));
+document.querySelector("input[value='delivery']").addEventListener("load", reveal(document.getElementsByClassName("userInfo address")));
+document.querySelector("input[value='delivery']").addEventListener("click", reveal(document.getElementsByClassName("userInfo address")));
 
 function reveal(obj = {})
 {
