@@ -21,10 +21,11 @@ function reveal(obj = {})
 function updateCost(qname = "")
 {
     index = parseInt(String((qname).replace(/[^0-9]/g, "")));
-    quantity = document.getElementsByName(qname).value;
+    console.log(qname + "; " + document.getElementsByName(qname));
+    quantity = parseInt(document.getElementsByName(qname).value);
     console.log(quantity);
     total = (quantity * menuItems[index].cost).toFixed(2);
-    tcost = document.getElementById(index).totalCost;
+    tcost = document.getElementById(index);
     tcost.setAttribute("value", total);
     updateTotal();
 }
