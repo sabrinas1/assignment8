@@ -11,10 +11,10 @@ document.getElementsByValue("delivery").addEventListener("click", reveal(documen
 
 function reveal(obj = {})
 {
-    if (obj.style.display != "none") {
-        obj.style.display = "none";
-    } else if (obj.style.display === "none") {
-        obj.style.display = "block";
+    if (obj.type != "hidden") {
+        obj.type = "hidden";
+    } else if (obj.type === "hidden") {
+        obj.type = "text";
     }
 }
 
