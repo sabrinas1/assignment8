@@ -1,6 +1,6 @@
 /*my functions to implement Jade Delight assignment specifications*/
 
-var quans = document.getElementsByClassName(selectQuantity);
+var quans = document.getElementsByClassName("selectQuantity");
 for (var i = 0; i < menuItems.length; i++) {
     quans[i].addEventListener("change", updateCost("quan" + i));
 }
