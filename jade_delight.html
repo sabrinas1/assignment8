@@ -24,7 +24,7 @@ menuItems = new Array(
 function makeSelect(name, minRange, maxRange)
 {
 	var t= "";
-	t = "<select name='" + name + "' size='1'>";
+	t = "<select name='" + name + "' size='1' id='" + name + "'>";
 	for (j=minRange; j<=maxRange; j++)
 	   t += "<option>" + j + "</option>";
 	t+= "</select>"; 
