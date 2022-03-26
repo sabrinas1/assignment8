@@ -1,8 +1,8 @@
 /*my functions to implement Jade Delight assignment specifications*/
 
-var quans = document.getElementsByClassName("selectQuantity");
 for (var i = 0; i < menuItems.length; i++) {
-    quans[i].addEventListener("change", updateCost("quan" + i));
+    qname = "quan" + i
+    document.getElementById(qname).addEventListener("change", updateCost(qname));
 }
 
 document.querySelector("input[value='delivery'").addEventListener("load", reveal(document.getElementsByClassName("userInfo address")));
