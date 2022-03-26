@@ -33,8 +33,7 @@ function updateTotal()
 {
     sum = 0;
     for (i = 0; i < menuItems.length; i++) {
-        qname = "quan" + i;
-        sum += menuItems[i].cost * document.getElementsByName(qname).value;
+        sum += document.getElementById(i).totalCost.value;
     }
     document.getElementById("subtotal").setAttribute("value", sum);
     ttax = (0.0625 * document.getElementById("subtotal").value).toFixed(2);
