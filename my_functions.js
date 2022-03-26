@@ -20,7 +20,7 @@ function reveal(obj = {})
 function updateCost(qname = "")
 {
     index = parseInt(String((qname).replace(/[^0-9]/g, "")));
-    console.log(qname + "; " + document.getElementById(qname));
+    console.log(qname + "; [" + document.getElementById(qname).name + ": " + document.getElementById(qname).value + "]");
     quantity = parseInt(document.getElementById(qname));
     console.log(quantity);
     total = (quantity * menuItems[index].cost).toFixed(2);
