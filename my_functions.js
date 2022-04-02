@@ -25,7 +25,7 @@ function updateCost(qname = "")
     tcost = document.getElementById(index);
     console.log(tcost);
     console.log(tcost.getElementsByClassName("totalCost"));
-    tcost.totalCost.cost.setAttribute("value", total);
+    tcost.getElementsByClassName("totalCost").cost.setAttribute("value", total);
     updateTotal();
 }
 
