@@ -5,9 +5,9 @@ for (var i = 0; i < menuItems.length; i++) {
     document.getElementById(qname).addEventListener("change", updateCost(qname));
 }
 
-//$(document).ready(function() {$(".userInfoaddress").hide();});
+$(document).ready(function() {$(".userInfoaddress").hide();});
 
-document.getElementsByClassName("userInfoaddress").addEventListener("load", reveal(document.getElementsByClassName("userInfoaddress")));
+//document.getElementsByClassName("userInfoaddress").addEventListener("load", reveal(document.getElementsByClassName("userInfoaddress")));
 document.querySelector("input[value='delivery']").addEventListener("click", reveal(document.getElementsByClassName("userInfoaddress")));
 
 function reveal(obj = {})
@@ -27,7 +27,7 @@ function updateCost(qname = "")
     tcost = document.getElementById(index).getElementsByClassName("totalCost");
     console.log(tcost);
     console.log(tcost.getElementsByName("cost"));
-    tcost.getElementsByName("cost").setAttribute("value", total);
+    tcost.childNodes[1].setAttribute("value", total);
     updateTotal();
 }
 
