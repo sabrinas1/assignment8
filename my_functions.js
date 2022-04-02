@@ -5,8 +5,10 @@ for (var i = 0; i < menuItems.length; i++) {
     document.getElementById(qname).addEventListener("change", updateCost(qname));
 }
 
-document.getElementsByClassName("userInfo address").addEventListener("load", reveal(document.getElementsByClassName("userInfo address")));
-document.querySelector("input[value='delivery']").addEventListener("click", reveal(document.getElementsByClassName("userInfo address")));
+//$(document).ready(function() {$(".userInfoaddress").hide();});
+
+document.getElementsByClassName("userInfoaddress").addEventListener("load", reveal(document.getElementsByClassName("userInfoaddress")));
+document.querySelector("input[value='delivery']").addEventListener("click", reveal(document.getElementsByClassName("userInfoaddress")));
 
 function reveal(obj = {})
 {
