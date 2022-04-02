@@ -5,7 +5,7 @@ for (var i = 0; i < menuItems.length; i++) {
     document.getElementById(qname).addEventListener("change", updateCost(qname));
 }
 
-document.addEventListener("load", reveal(document.getElementsByClassName("userInfo address")));
+document.getElementsByClassName("userInfo address").addEventListener("load", reveal(document.getElementsByClassName("userInfo address")));
 document.querySelector("input[value='delivery']").addEventListener("click", reveal(document.getElementsByClassName("userInfo address")));
 
 function reveal(obj = {})
@@ -23,6 +23,7 @@ function updateCost(qname = "")
     quantity = document.getElementById(qname).value;
     total = (quantity * menuItems[index].cost).toFixed(2);
     tcost = document.getElementById(index);
+    console.log(tcost);
     console.log(tcost.getElementsByClassName("totalCost"));
     tcost.totalCost.cost.setAttribute("value", total);
     updateTotal();
