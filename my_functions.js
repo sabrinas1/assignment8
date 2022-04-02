@@ -22,10 +22,10 @@ function updateCost(qname = "")
     index = parseInt(String((qname).replace(/[^0-9]/g, "")));
     quantity = document.getElementById(qname).value;
     total = (quantity * menuItems[index].cost).toFixed(2);
-    tcost = document.getElementById(index);
+    tcost = document.getElementById(index).getElementsByClassName("totalCost");
     console.log(tcost);
-    console.log(tcost.getElementsByClassName("totalCost"));
-    tcost.getElementsByClassName("totalCost").cost.setAttribute("value", total);
+    console.log(tcost.getElementsByName("cost"));
+    tcost.getElementsByName("cost").setAttribute("value", total);
     updateTotal();
 }
 
