@@ -6,3 +6,7 @@
 #subtotal, #tax, #total, #fname, #lname, #street, #city, #phone {
     align-items: center;
 }
+
+.address {
+    visibility: hidden;
+}
