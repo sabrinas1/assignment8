@@ -4,6 +4,6 @@
 }
 
 #subtotal, #tax, #total {
-    display: block;
+    display: inline-block;
     align-items: center;
 }
