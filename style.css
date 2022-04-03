@@ -3,7 +3,11 @@
     align-content: left;
 }
 
-#subtotal, #tax, #total, #fname, #lname, #street, #city, #phone {
+#subtotal, #tax, #total {
+    align-items: center;
+}
+
+input[name="fname"], input[name="lname"], input[name="street"], input[name="city"], input[name="phone"] {
     align-items: center;
 }
 
