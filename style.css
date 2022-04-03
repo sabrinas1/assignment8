@@ -1,0 +1,9 @@
+.totalSection {
+    display: block;
+    align-items: left;
+}
+
+#subtotal, #tax, #total {
+    display: block;
+    align-items: center;
+}
