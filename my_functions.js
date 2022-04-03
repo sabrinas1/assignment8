@@ -10,9 +10,9 @@ function reveal(obj = {})
 {
     console.log("Revealing/ hiding!");
     if (obj.style != "visibility: hidden") {
-        obj.style = "visibility: hidden";
+        obj.setAttribute("style", "visibility: hidden");
     } else if (obj.style === "visibility: hidden") {
-        obj.style = "visibility: visible";
+        obj.setAttribute("style", "visibility: visible");
     }
 }
 
