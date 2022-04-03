@@ -1,8 +1,8 @@
-.totalSection {
+.totalSection, .userInfo {
     width: 100%;
     align-content: left;
 }
 
-#subtotal, #tax, #total {
+#subtotal, #tax, #total, #fname, #lname, #street, #city, #phone {
     align-items: center;
 }
