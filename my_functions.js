@@ -50,7 +50,7 @@ function verify()
     }
     phone = document.getElementsByClassName("userInfo")[4].getElementsByTagName("input")[0].value;
     phone = String(phone.replace(/[^0-9]/g, ""))
-    if (phone.length() != 7 || phone.length() != 10) {
+    if (phone.length != 7 || phone.length != 10) {
         alert("Please enter a valid phone number");
         return;
     }
