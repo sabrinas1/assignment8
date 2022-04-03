@@ -8,11 +8,14 @@ for (var i = 0; i < menuItems.length; i++) {
 // $(document).ready(function() {$(".address").hide();});
 // $(document.getElementsByClassName("address")).click(function() { $(".userInfoaddress").show(); });
 
-document.getElementsByClassName("address").addEventListener("load", reveal(document.getElementsByClassName("address")));
-document.querySelector("input[value='delivery']").addEventListener("click", reveal(document.getElementsByClassName("address")));
+document.getElementsByClassName("address").addEventListener("load", reveal(document.getElementsByClassName("address").street));
+document.getElementsByClassName("address").addEventListener("load", reveal(document.getElementsByClassName("address").city));
+document.querySelector("input[value='delivery']").addEventListener("click", reveal(document.getElementsByClassName("address").street));
+document.querySelector("input[value='delivery']").addEventListener("click", reveal(document.getElementsByClassName("address").city));
 
 function reveal(obj = {})
 {
+    console.log("Revealing/ hiding!");
     if (obj.type != "hidden") {
         obj.type = "hidden";
     } else if (obj.type === "hidden") {
@@ -28,7 +31,7 @@ function updateCost(qname = "")
     tcost = document.getElementById(index).getElementsByClassName("totalCost");
     console.log(tcost);
     console.log(tcost.lastChild);
-    tcost.lastChild.setAttribute("value", total);
+    tcost.children.cost.setAttribute("value", total);
     updateTotal();
 }
 
