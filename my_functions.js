@@ -1,13 +1,5 @@
 /*my functions to implement Jade Delight assignment specifications*/
 
-for (var i = 0; i < menuItems.length; i++) {
-    qname = "quan" + i
-    document.getElementById(qname).addEventListener("change", updateCost(qname));
-}
-
-// $(document).ready(function() {$(".address").hide();});
-// $(document.getElementsByClassName("address")).click(function() { $(".userInfoaddress").show(); });
-
 document.getElementsByClassName("address").addEventListener("load", reveal(document.getElementsByClassName("address").street));
 document.getElementsByClassName("address").addEventListener("load", reveal(document.getElementsByClassName("address").city));
 document.querySelector("input[value='delivery']").addEventListener("click", reveal(document.getElementsByClassName("address").street));
@@ -21,6 +13,11 @@ function reveal(obj = {})
     } else if (obj.type === "hidden") {
         obj.type = "text";
     }
+}
+
+for (var i = 0; i < menuItems.length; i++) {
+    qname = "quan" + i
+    document.getElementById(qname).addEventListener("change", updateCost(qname));
 }
 
 function updateCost(qname = "")
