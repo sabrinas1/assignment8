@@ -1,7 +1,7 @@
 /*my functions to implement Jade Delight assignment specifications*/
 
 document.querySelector("input[value='delivery']").addEventListener("click", reveal(document.getElementsByClassName("address")));
-document.addEventListener("submit", verify(document.getElementsByTagName("form")))
+document.addEventListener("submit", verify());
 
 function reveal(obj)
 {
@@ -41,14 +41,14 @@ function updateTotal()
     document.getElementById("total").setAttribute("value", sum + ttax);
 }
 
-function verify(form = {})
+function verify()
 {
-    last = form.getElementsByClassName("userInfo").lname.getAttribute("value");
+    last = document.getElementsByClassName("userInfo")[1].getElementsByTagName("input")[0].value;
     if (last == null) {
         alert("Please enter your last name");
         return;
     }
-    phone = form.getElementsByClassName("userInfo").phone.getAttribute("value");
+    phone = form.getElementsByClassName("userInfo")[4].getElementsByTagName("input")[0].value;
     phone = String(phone.replace(/[^0-9]/g, ""))
     if (phone.length() != 7 || phone.length() != 10) {
         alert("Please enter a valid phone number");
@@ -64,8 +64,8 @@ function verify(form = {})
         newMin = currMinute + 15;
     } else {
         newMin = currMinute + 30;
-        street = form.getElementsByClassName("userInfo").street.getAttribute("value");
-        city = form.getElementsByClassName("userInfo").city.getAttribute("value");
+        street = form.getElementsByClassName("userInfo")[2].getElementsByTagName("input")[0].value;
+        city = form.getElementsByClassName("userInfo")[3].getElementsByTagName("input")[0].value;
         if (street == null || city == null) {
             alert("Please enter your address");
             return;
