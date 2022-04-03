@@ -35,10 +35,10 @@ function updateTotal()
     for (i = 0; i < menuItems.length; i++) {
         sum += document.getElementById(i).getElementsByClassName("totalCost")[0].value;
     }
-    document.getElementById("subtotal").setAttribute("value", sum);
+    document.getElementById("subtotal").setAttribute("value", parseInt(sum));
     ttax = (0.0625 * document.getElementById("subtotal").value).toFixed(2);
-    document.getElementById("tax").setAttribute("value", ttax);
-    document.getElementById("total").setAttribute("value", sum + ttax);
+    document.getElementById("tax").setAttribute("value", parseInt(ttax));
+    document.getElementById("total").setAttribute("value", parseInt(sum + ttax));
 }
 
 function verify()
