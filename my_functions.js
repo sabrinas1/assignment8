@@ -5,7 +5,6 @@ document.addEventListener("submit", verify(document.getElementsByTagName("form")
 
 function reveal(obj)
 {
-    console.log(obj);
     for (var i = 0; i < obj.length; i++) {
         if (obj[i].style != "visibility: hidden") {
             obj[i].setAttribute("style", "visibility: hidden");
