@@ -1,9 +1,8 @@
 .totalSection {
-    display: block;
-    align-items: left;
+    width: 100%;
+    align-content: left;
 }
 
 #subtotal, #tax, #total {
-    display: inline-block;
     align-items: center;
 }
