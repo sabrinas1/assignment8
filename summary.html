@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Jade Delight Order Summary</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    
+    <script type="text/javascript">
+        function MenuItem(name, cost) {
+                this.name = name;
+                this.cost = cost;
+            }
+
+            menuItems = new Array(
+                new MenuItem("Chicken Chop Suey", 4.5),
+                new MenuItem("Sweet and Sour Pork", 6.25),
+                new MenuItem("Shrimp Lo Mein", 6.25),
+                new MenuItem("Moo Shi Chicken", 7.5),
+                new MenuItem("Fried Rice", 2.85)
+            );
+    </script>
+</head>
+
+<body>
+    <h1>Jade Delight</h1>
+    <h2>Order Summary</h2>
+
+    <table border="0" cellpadding="3">
+        <tr>
+            <th>Quantity</th>
+            <th>Item Name</th>
+            <th>Total Cost</th>
+        </tr>
+        <script>
+
+            var s = "";
+            for (i = 0; i < menuItems.length; i++) {
+                s += "<tr id=" + i + ">";
+                s += td("quantity", "selectQuantity");
+                s += td(menuItems[i].name, "itemName");
+                s += td("$" + totalCost, "cost");
+                s += "</tr>";
+            }
+            document.writeln(s);
+        </script>
+        </div>
+    </table>
+    <p class="subtotal totalSection"><label>Subtotal: $</label> </p>
+    <p class="tax totalSection"><label>Mass tax 6.25%: $</label> </p>
+    <p class="total totalSection"><label>Total: $</label> </p>
+    <p class="time"><label>Order ready: </label> </p>
+</body>
+</html>
