@@ -5,10 +5,11 @@ for (var i = 0; i < menuItems.length; i++) {
     document.getElementById(qname).addEventListener("change", updateCost(qname));
 }
 
-$(document).ready(function() {$(".userInfoaddress").hide();});
+// $(document).ready(function() {$(".address").hide();});
+// $(document.getElementsByClassName("address")).click(function() { $(".userInfoaddress").show(); });
 
-//document.getElementsByClassName("userInfoaddress").addEventListener("load", reveal(document.getElementsByClassName("userInfoaddress")));
-document.querySelector("input[value='delivery']").addEventListener("click", reveal(document.getElementsByClassName("userInfoaddress")));
+document.getElementsByClassName("address").addEventListener("load", reveal(document.getElementsByClassName("address")));
+document.querySelector("input[value='delivery']").addEventListener("click", reveal(document.getElementsByClassName("address")));
 
 function reveal(obj = {})
 {
