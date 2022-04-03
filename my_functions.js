@@ -6,13 +6,15 @@ document.querySelector("input[value='delivery']").addEventListener("click", reve
 document.querySelector("input[value='delivery']").addEventListener("click", reveal(document.getElementsByClassName("address")));
 //document.addEventListener("submit", verify(document.getElementsByTagName("form")))
 
-function reveal(obj = {})
+function reveal(obj)
 {
-    console.log("Revealing/ hiding!");
-    if (obj.style != "visibility: hidden") {
-        obj.setAttribute("style", "visibility: hidden");
-    } else if (obj.style === "visibility: hidden") {
-        obj.setAttribute("style", "visibility: visible");
+    console.log(obj);
+    for (var i = 0; i < obj.length; i++) {
+        if (obj[i].style != "visibility: hidden") {
+            obj[i].setAttribute("style", "visibility: hidden");
+        } else if (obj[i].style === "visibility: hidden") {
+            obj[i].setAttribute("style", "visibility: visible");
+        }
     }
 }
 
