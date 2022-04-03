@@ -48,7 +48,7 @@ function verify()
         alert("Please enter your last name");
         return;
     }
-    phone = form.getElementsByClassName("userInfo")[4].getElementsByTagName("input")[0].value;
+    phone = document.getElementsByClassName("userInfo")[4].getElementsByTagName("input")[0].value;
     phone = String(phone.replace(/[^0-9]/g, ""))
     if (phone.length() != 7 || phone.length() != 10) {
         alert("Please enter a valid phone number");
@@ -59,13 +59,13 @@ function verify()
     currHour = currTime.getHours();
     currMinute = currTime.getMinutes();
 
-    method = form.p_or_d[0];
+    method = document.p_or_d[0];
     if (method.checked === "checked") {
         newMin = currMinute + 15;
     } else {
         newMin = currMinute + 30;
-        street = form.getElementsByClassName("userInfo")[2].getElementsByTagName("input")[0].value;
-        city = form.getElementsByClassName("userInfo")[3].getElementsByTagName("input")[0].value;
+        street = document.getElementsByClassName("userInfo")[2].getElementsByTagName("input")[0].value;
+        city = document.getElementsByClassName("userInfo")[3].getElementsByTagName("input")[0].value;
         if (street == null || city == null) {
             alert("Please enter your address");
             return;
@@ -77,7 +77,7 @@ function verify()
         newHour = currHour + 1;
     }
 
-    total = form.getElementById(total).value;
+    total = document.getElementById(total).value;
     if (total == 0) {
         alert("Invalid Order: No items selected");
         return;
@@ -85,7 +85,9 @@ function verify()
 
     alert("Thank you for ordering from Jade Delight!");
 
-    //window.open("summary.html");
+    // window.open("summary.html");
+
+    // "summary.html".getElement
 
 
     
