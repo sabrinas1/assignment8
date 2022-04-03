@@ -26,8 +26,8 @@ function updateCost(qname = "")
     total = (quantity * menuItems[index].cost).toFixed(2);
     tcost = document.getElementById(index).getElementsByClassName("totalCost");
     console.log(tcost);
-    console.log(tcost.childNodes[1]);
-    tcost.childNodes[1].setAttribute("value", total);
+    console.log(tcost.lastChild);
+    tcost.lastChild.setAttribute("value", total);
     updateTotal();
 }
 
