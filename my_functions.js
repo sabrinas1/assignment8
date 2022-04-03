@@ -1,7 +1,7 @@
 /*my functions to implement Jade Delight assignment specifications*/
 
-document.getElementsByClassName("address").addEventListener("load", reveal(document.getElementsByClassName("address").street));
-document.getElementsByClassName("address").addEventListener("load", reveal(document.getElementsByClassName("address").city));
+document.addEventListener("load", reveal(document.getElementsByClassName("address").street));
+document.addEventListener("load", reveal(document.getElementsByClassName("address").city));
 document.querySelector("input[value='delivery']").addEventListener("click", reveal(document.getElementsByClassName("address").street));
 document.querySelector("input[value='delivery']").addEventListener("click", reveal(document.getElementsByClassName("address").city));
 
