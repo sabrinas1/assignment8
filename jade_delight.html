@@ -61,7 +61,7 @@ function td(content, className="")
     <th>Total Cost</th>
   </tr>
 <script>
-
+  $('input[type=radio][name=p_or_d]').on('change', reveal())
   console.log("making table");
   var s = "";
   for (i=0; i< menuItems.length; i++)
@@ -76,6 +76,7 @@ function td(content, className="")
   console.log("writing");
   document.writeln(s);
   console.log("wrote");
+  document.addEventListener("submit", verify());
 </script>
 </div>
 </table>

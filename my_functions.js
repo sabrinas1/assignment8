@@ -1,10 +1,11 @@
 /*my functions to implement Jade Delight assignment specifications*/
 
-$('input[type=radio][name=p_or_d]').on('change', reveal($('input[type=radio][name=p_or_d]')))
-document.addEventListener("submit", verify());
 
-function reveal(obj)
+
+
+function reveal()
 {
+    var obj = $('input[type=radio][name=p_or_d]');
     console.log("reveal");
     for (var i = 0; i < obj.length; i++) {
         if (obj[i].style != "visibility: hidden") {
