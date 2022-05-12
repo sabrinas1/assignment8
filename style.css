@@ -13,7 +13,7 @@ label {
 }
 
 input[name="fname"], input[name="lname"], input[name="street"], input[name="city"], input[name="phone"] {
-    align-items: center;
+    align-items: right;
 }
 
 .address {
