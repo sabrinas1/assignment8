@@ -62,7 +62,7 @@ function td(content, className="")
   </tr>
 <script>
 
-  var s = "";
+  console.log("making table");
   for (i=0; i< menuItems.length; i++)
   {
 	  s += "<tr id=" + i + ">";
@@ -72,7 +72,9 @@ function td(content, className="")
 	  s += td("$<input type='text' name='cost' value=0 />", "totalCost");
 	  s+= "</tr>";
   }
+  console.log("writing");
   document.writeln(s);
+  console.log("wrote");
 </script>
 </div>
 </table>
