@@ -5,6 +5,7 @@ document.addEventListener("submit", verify());
 
 function reveal(obj)
 {
+    console.log("reveal");
     for (var i = 0; i < obj.length; i++) {
         if (obj[i].style != "visibility: hidden") {
             obj[i].setAttribute("style", "visibility: hidden");
@@ -21,6 +22,7 @@ for (var i = 0; i < menuItems.length; i++) {
 
 function updateCost(qname = "")
 {
+    console.log("update costs");
     index = parseInt(String((qname).replace(/[^0-9]/g, "")));
     quantity = document.getElementById(qname).value;
     total = (quantity * menuItems[index].cost).toFixed(2);
@@ -31,6 +33,7 @@ function updateCost(qname = "")
 
 function updateTotal()
 {
+    console.log("update total");
     sum = 0;
     for (i = 0; i < menuItems.length; i++) {
         sum += document.getElementById(i).getElementsByClassName("totalCost")[0].value;
@@ -43,6 +46,7 @@ function updateTotal()
 
 function verify()
 {
+    console.log("verify");
     last = document.getElementsByClassName("userInfo")[1].getElementsByTagName("input")[0].value;
     if (last == null) {
         alert("Please enter your last name");
