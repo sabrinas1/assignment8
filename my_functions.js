@@ -1,6 +1,6 @@
 /*my functions to implement Jade Delight assignment specifications*/
 
-document.querySelector("input[value='delivery']").addEventListener("click", reveal(document.getElementsByClassName("address")));
+$('input[type=radio][name=p_or_d]').on('change', reveal($('input[type=radio][name=p_or_d]')))
 document.addEventListener("submit", verify());
 
 function reveal(obj)
@@ -46,7 +46,7 @@ function updateTotal()
 
 function verify()
 {
-    console.log("verify");
+    console.log("reveal");
     last = document.getElementsByClassName("userInfo")[1].getElementsByTagName("input")[0].value;
     if (last == null) {
         alert("Please enter your last name");
