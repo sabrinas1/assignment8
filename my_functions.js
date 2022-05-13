@@ -30,7 +30,7 @@ function reveal()
 /* updates total cost for item when quantity changes */
 function updateCost(qname = "")
 {
-    console.log("update costs");
+    console.log(qname);
     index = parseInt(String((qname).replace(/[^0-9]/g, "")));
     quantity = document.getElementById(qname).value;
     total = (quantity * menuItems[index].cost).toFixed(2);
