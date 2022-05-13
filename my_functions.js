@@ -14,6 +14,7 @@ $(document).ready(function () {
 /* unhides address inputs when change is made from pickup to delivery */
 function reveal()
 {
+    console.log("reveal");
     var obj = document.getElementsByClassName("address");
     for (var i = 0; i < obj.length; i++) {
         if (obj[i].style != "visibility: hidden") {
@@ -56,7 +57,7 @@ function updateTotal()
 
 function verify()
 {
-    console.log("reveal");
+    console.log("verify");
     last = document.getElementsByClassName("userInfo")[1].getElementsByTagName("input")[0].value;
     if (last == null) {
         alert("Please enter your last name");
