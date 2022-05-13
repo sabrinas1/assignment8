@@ -20,10 +20,10 @@ function reveal()
     var obj = document.getElementsByClassName("address");
     for ( let element of obj) {
         console.log(element.style.visibility);
-        if (element.getAttribute("style") != "hidden") {
-            element.setAttribute("style", "visibility: hidden");
-        } else if (element.getAttribute("style") === "hidden") {
-            element.setAttribute("style", "visibility: inherit");
+        if (element.style.visibility === 'hidden') {
+            element.style.visibility == 'visible';
+        } else {
+            element.style.visibility == 'hidden';
         }
     }
 }
