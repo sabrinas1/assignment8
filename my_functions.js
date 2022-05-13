@@ -16,9 +16,9 @@ function reveal()
 {
     var obj = document.getElementsByClassName("address");
     for ( let element of obj) {
-        if (element.setAttribute("style") != "hidden") {
+        if (element.getAttribute("style") != "hidden") {
             element.setAttribute("style", "visibility: hidden");
-        } else if (element.setAttribute("style") === "hidden") {
+        } else if (element.getAttribute("style") === "hidden") {
             element.setAttribute("style", "visibility: visible");
         }
     }
