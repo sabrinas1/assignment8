@@ -32,28 +32,22 @@ function updateCost()
 {
     for (let i = 0; i < menuItems.length; i++) {
         qname = 'quan' + i;
-        console.log($('#' + qname).val());
         quantity = parseFloat($('#' + qname).val());
         total = (quantity * menuItems[i].cost).toFixed(2);
-        console.log(quantity + " " + total);
         tcost = document.getElementById(i).getElementsByClassName("totalCost")[0];
-        console.log("old: " + tcost.getElementsByTagName("input")[0].value);
         tcost.getElementsByTagName("input")[0].value = total;
-        console.log("new: " + tcost.getElementsByTagName("input")[0].value);
     }
     updateTotal();
 }
 
 function updateTotal()
 {
-    console.log("update total");
     var sum = 0;
     for (i = 0; i < menuItems.length; i++) {
         tcost = document.getElementById(i).getElementsByClassName("totalCost")[0];
         cost = tcost.getElementsByTagName("input")[0].value;
         sum += parseFloat(cost);
     }
-    console.log(sum);
     document.getElementById("subtotal").value = sum.toFixed(2);
     ttax = (0.0625 * document.getElementById("subtotal").value).toFixed(2);
     document.getElementById("tax").value = ttax;
@@ -62,7 +56,6 @@ function updateTotal()
 
 function verify()
 {
-    console.log("verify");
     last = document.getElementsByClassName("userInfo")[1].getElementsByTagName("input")[0].value;
     if (last == null) {
         alert("Please enter your last name");
@@ -96,6 +89,8 @@ function verify()
     if (newMin > 60) {
         newMin -= 60;
         newHour = currHour + 1;
+    } else {
+        newHour = currHour;
     }
 
     total = $('#total').val();
@@ -106,6 +101,26 @@ function verify()
 
     alert("Thank you for ordering from Jade Delight!");
 
-    window.open("summary.html");
-    
+    var summary = window.open("summary.html");
+
+    for (let i = 0; i < menuItems.length; i++) {
+        qname = 'quan' + i;
+        quantity = summary.document.getElementById(i).getElementsByClassName("quantity")[0];
+        quantity.value = parseFloat($('#' + qname).val());
+        tcost = summary.document.getElementById(i).getElementsByClassName("totalCost")[0];
+        tcost.getElementsByTagName("input")[0].value = document.getElementById(i).getElementsByClassName("totalCost")[0].getElementsByTagName("input")[0].value;
+    }
+
+    var sum = 0;
+    for (i = 0; i < menuItems.length; i++) {
+        tcost = summary.document.getElementById(i).getElementsByClassName("totalCost")[0];
+        cost = tcost.getElementsByTagName("input")[0].value;
+        sum += parseFloat(cost);
+    }
+    summary.document.getElementById("subtotal").value = sum.toFixed(2);
+    ttax = (0.0625 * sum).toFixed(2);
+    summary.document.getElementById("tax").value = ttax;
+    summary.document.getElementById("total").value = parseFloat(sum) + parseFloat(ttax);
+
+    summary.documentl.getElementById("time").value = newHour + ":" + newMin;
 }
