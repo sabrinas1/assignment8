@@ -17,13 +17,13 @@ function reveal()
     console.log("reveal");
     var obj = document.getElementsByClassName("address");
     console.log(obj);
-    obj.forEach(element => {
+    for ( let element of obj) {
         if (element.style != "visibility: hidden") {
             element.setAttribute("style", "visibility: hidden");
         } else if (element.style === "visibility: hidden") {
             element.setAttribute("style", "visibility: visible");
         }
-    });
+    }
 }
 
 /* updates total cost for item when quantity changes */
