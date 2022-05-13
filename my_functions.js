@@ -1,8 +1,5 @@
 /*my functions to implement Jade Delight assignment specifications*/
 
-
-
-
 function reveal()
 {
     var obj = $('input[type=radio][name=p_or_d]');
@@ -14,11 +11,6 @@ function reveal()
             obj[i].setAttribute("style", "visibility: visible");
         }
     }
-}
-
-for (var i = 0; i < menuItems.length; i++) {
-    qname = "quan" + i
-    document.getElementById(qname).addEventListener("change", updateCost(qname));
 }
 
 function updateCost(qname = "")
