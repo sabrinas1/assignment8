@@ -17,13 +17,13 @@ function reveal()
     console.log("reveal");
     var obj = document.getElementsByClassName("address");
     console.log(obj);
-    for (var i = 0; i < obj.length; i++) {
-        if (obj[i].style != "visibility: hidden") {
-            obj[i].setAttribute("style", "visibility: hidden");
-        } else if (obj[i].style === "visibility: hidden") {
-            obj[i].setAttribute("style", "visibility: visible");
+    obj.forEach(element => {
+        if (element.style != "visibility: hidden") {
+            element.setAttribute("style", "visibility: hidden");
+        } else if (element.style === "visibility: hidden") {
+            element.setAttribute("style", "visibility: visible");
         }
-    }
+    });
 }
 
 /* updates total cost for item when quantity changes */
