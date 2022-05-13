@@ -61,7 +61,7 @@
         	<th>Total Cost</th>
     	</tr>
 		<script>
-    		document.getElementsByName('p_or_d').addEventListener('change', reveal());
+    		
     		console.log("making table");
     		var s = "";
     		for (i=0; i< menuItems.length; i++)
@@ -81,6 +81,7 @@
 				qname = "quan" + i
 				document.getElementById(qname).addEventListener("change", updateCost(qname));
     		}
+			document.getElementsByName('p_or_d').addEventListener('change', reveal());
 		</script>
 	</div>
 	</table>
