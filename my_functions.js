@@ -1,5 +1,16 @@
 /*my functions to implement Jade Delight assignment specifications*/
 
+function load() {
+    console.log("load");
+    document.getElementsByName('p_or_d').addEventListener('change', reveal());
+    for (var i = 0; i < menuItems.length; i++) {
+        qname = "quan" + i
+        document.getElementById(qname).addEventListener("change", updateCost(qname));
+    }
+    document.addEventListener("submit", verify());
+    console.log("listeners set");
+}
+
 function reveal()
 {
     var obj = document.getElementsByClassName("address");
