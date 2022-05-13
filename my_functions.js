@@ -1,5 +1,6 @@
 /*my functions to implement Jade Delight assignment specifications*/
 
+/* add event listeners once elements are loaded */
 function load() {
     var radios = document.getElementsByName('p_or_d')
     radios.forEach(function(radio) {
