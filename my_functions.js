@@ -34,6 +34,7 @@ function updateCost(qname = "")
     quantity = document.getElementById(qname).value;
     total = (quantity * menuItems[index].cost).toFixed(2);
     tcost = document.getElementById(index).getElementsByClassName("totalCost")[0];
+    console.log(tcost);
     tcost.getElementsByTagName("input")[0].setAttribute("value", total);
     updateTotal();
 }
