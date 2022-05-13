@@ -2,7 +2,7 @@
 
 function reveal()
 {
-    var obj = $('input[type=radio][name=p_or_d]');
+    var obj = document.getElementsByClassName("address");
     console.log("reveal");
     for (var i = 0; i < obj.length; i++) {
         if (obj[i].style != "visibility: hidden") {
