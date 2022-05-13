@@ -76,8 +76,6 @@
     		console.log("writing");
     		document.writeln(s);
     		console.log("wrote");
-    		document.addEventListener("submit", verify());
-			document.getElementsByName('p_or_d').addEventListener('change', reveal());
 		</script>
 
 	</table>
@@ -95,10 +93,15 @@
 
 	</form>
 	<script>
-		for (var i = 0; i < menuItems.length; i++) {
+		document.onload = function() {
+			document.getElementsByName('p_or_d').addEventListener('change', reveal());
+			for (var i = 0; i < menuItems.length; i++) {
 				qname = "quan" + i
 				document.getElementById(qname).addEventListener("change", updateCost(qname));
 			}
+			document.addEventListener("submit", verify());
+			
+		}
 	</script>
 
 </body>
