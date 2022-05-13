@@ -2,6 +2,10 @@
 
 /* add event listeners once elements are loaded */
 $(document).ready(function () {
+    var obj = document.getElementsByClassName("address");
+    for (let element of obj) {
+        element.style.visibility = 'hidden';
+    }
     $('input[type=radio][name=p_or_d]').on('change', function() {reveal();});
     /*document.getElementById("radio").addEventListener('click', reveal());*/
     for (var i = 0; i < menuItems.length; i++) {
