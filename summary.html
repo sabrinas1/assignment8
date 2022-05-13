@@ -7,32 +7,60 @@
     
     <script type="text/javascript">
         function MenuItem(name, cost) {
-                this.name = name;
-                this.cost = cost;
-            }
+            this.name = name;
+            this.cost = cost;
+        }
 
-            menuItems = new Array(
-                new MenuItem("Chicken Chop Suey", 4.5),
-                new MenuItem("Sweet and Sour Pork", 6.25),
-                new MenuItem("Shrimp Lo Mein", 6.25),
-                new MenuItem("Moo Shi Chicken", 7.5),
-                new MenuItem("Fried Rice", 2.85)
-            );
+        menuItems = new Array(
+            new MenuItem("Chicken Chop Suey", 4.5),
+            new MenuItem("Sweet and Sour Pork", 6.25),
+            new MenuItem("Shrimp Lo Mein", 6.25),
+            new MenuItem("Moo Shi Chicken", 7.5),
+            new MenuItem("Fried Rice", 2.85)
+        );
+
+        function td(content, className = "") {
+            return "<td class = '" + className + "'>" + content + "</td>";
+        }
+
     </script>
 </head>
 
 <body>
     <h1>Jade Delight</h1>
     <h2>Order Summary</h2>
-    <p class="item0"><label>Total: $</label> </p>
-    <p class="item1"><label>Total: $</label> </p>
-    <p class="item2"><label>Total: $</label> </p>
-    <p class="item3"><label>Total: $</label> </p>
-    <p class="item4"><label>Total: $</label> </p>
-
-    <p class="subtotal totalSection"><label>Subtotal: $</label> </p>
-    <p class="tax totalSection"><label>Mass tax 6.25%: $</label> </p>
-    <p class="total totalSection"><label>Total: $</label> </p>
-    <p class="time"><label>Order ready: </label> </p>
+    <table border="0" cellpadding="3">
+        <tr>
+            <th>Quantity</th>
+            <th>Item Name</th>
+            <th>Cost Each</th>
+            <th>Total Cost</th>
+        </tr>
+        <script>
+            var s = "";
+            for (i = 0; i < menuItems.length; i++) {
+                s += "<tr id=" + i + ">";
+                s += td(0, "quantity");
+                s += td(menuItems[i].name, "itemName");
+                s += td("$" + menuItems[i].cost.toFixed(2), "cost");
+                s += td("$<input type='text' name='cost' value=0.00 />", "totalCost");
+                s += "</tr>";
+            }
+            document.writeln(s);
+        </script>
+    
+    </table>
+    <p class="subtotal totalSection"><label>Subtotal:</label>
+        $ <input type="text" name='subtotal' id="subtotal" value=0.00 />
+    </p>
+    <p class="tax totalSection"><label>Mass tax 6.25%:</label>
+        $ <input type="text" name='tax' id="tax" value=0.00 />
+    </p>
+    <p class="total totalSection"><label>Total:</label>
+        $ <input type="text" name='total' id="total" value=0.00 />
+    </p>
+    <p class="total orderTime"><label>Order Ready:</label>
+        <input type="text" name='time' id="time" value=0:00 />
+    </p>
 </body>
 </html>
