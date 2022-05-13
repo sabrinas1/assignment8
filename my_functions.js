@@ -1,7 +1,7 @@
 /*my functions to implement Jade Delight assignment specifications*/
 
 /* add event listeners once elements are loaded */
-function load() {
+$(document).ready(function () {
     $('input[type=radio][name=p_or_d]').on('change', reveal());
     /*document.getElementById("radio").addEventListener('click', reveal());*/
     for (var i = 0; i < menuItems.length; i++) {
@@ -9,7 +9,7 @@ function load() {
         document.getElementById(qname).addEventListener("change", updateCost(qname));
     }
     $('input[type=button]').on('click', validate());
-}
+});
 
 /* unhides address inputs when change is made from pickup to delivery */
 function reveal()
