@@ -34,6 +34,7 @@ function updateCost(qname = "")
     index = parseInt(String((qname).replace(/[^0-9]/g, "")));
     quantity = document.getElementById(qname).value;
     total = (quantity * menuItems[index].cost).toFixed(2);
+    console.log(quantity + " " + total);
     tcost = document.getElementById(index).getElementsByClassName("totalCost")[0];
     console.log("old: " + tcost.getElementsByTagName("input")[0].value);
     tcost.getElementsByTagName("input")[0].value = total;
