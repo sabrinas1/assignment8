@@ -98,7 +98,7 @@ function verify()
         newHour = currHour + 1;
     }
 
-    total = document.getElementById(total).value;
+    total = $('#total').val();
     if (total == 0) {
         alert("Invalid Order: No items selected");
         return;
@@ -106,10 +106,6 @@ function verify()
 
     alert("Thank you for ordering from Jade Delight!");
 
-    // window.open("summary.html");
-
-    // "summary.html".getElement
-
-
+    window.open("summary.html");
     
 }
