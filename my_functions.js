@@ -2,10 +2,7 @@
 
 /* add event listeners once elements are loaded */
 function load() {
-    var radios = document.getElementsByName('p_or_d')
-    radios.forEach(function(radio) {
-        radio.addEventListener('change', reveal());
-    })
+    document.getElementById("radio").addEventListener('change', reveal());
     for (var i = 0; i < menuItems.length; i++) {
         qname = "quan" + i
         document.getElementById(qname).addEventListener("change", updateCost(qname));
