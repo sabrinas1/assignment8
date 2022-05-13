@@ -19,7 +19,7 @@ function reveal()
         if (element.getAttribute("style") != "hidden") {
             element.setAttribute("style", "visibility: hidden");
         } else if (element.getAttribute("style") === "hidden") {
-            element.setAttribute("style", "visibility: visible");
+            element.removeAttribute("style");
         }
     }
 }
