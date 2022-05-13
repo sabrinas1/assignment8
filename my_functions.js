@@ -57,7 +57,7 @@ function updateTotal()
     document.getElementById("subtotal").value = sum;
     ttax = (0.0625 * document.getElementById("subtotal").value).toFixed(2);
     document.getElementById("tax").value = ttax;
-    document.getElementById("total").value = sum + ttax;
+    document.getElementById("total").value = parseInt(sum) + parseInt(ttax);
 }
 
 function verify()
