@@ -6,7 +6,7 @@ $(document).ready(function () {
     /*document.getElementById("radio").addEventListener('click', reveal());*/
     for (var i = 0; i < menuItems.length; i++) {
         qname = "quan" + i
-        document.getElementById(qname).addEventListener("change", updateCost(qname));
+        $('#qname').on("change", updateCost(qname));
     }
     $('input[type=button]').on('click', validate());
 });
