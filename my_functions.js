@@ -9,7 +9,7 @@ $(document).ready(function () {
     $('input[type=radio][name=p_or_d]').on('change', function() {reveal();});
     for (var i = 0; i < menuItems.length; i++) {
         qname = "quan" + i
-        $('#' + qname).on("change", function () {updateCost(qname);});
+        $('#' + qname).on("change", function () {updateCost();});
     }
     $('input[type=button]').on('click', function () {verify();});
 });
@@ -28,17 +28,18 @@ function reveal()
 }
 
 /* updates total cost for item when quantity changes */
-function updateCost(qname = "")
+function updateCost()
 {
-    console.log(qname);
-    index = parseInt(String((qname).replace(/[^0-9]/g, "")));
-    quantity = document.getElementById('qname').value;
-    total = (quantity * menuItems[index].cost).toFixed(2);
-    console.log(quantity + " " + total);
-    tcost = document.getElementById(index).getElementsByClassName("totalCost")[0];
-    console.log("old: " + tcost.getElementsByTagName("input")[0].value);
-    tcost.getElementsByTagName("input")[0].value = total;
-    console.log("new: " + tcost.getElementsByTagName("input")[0].value);
+    for (let i = 0; i < menuItems.length; i++) {
+        qname = 'quan' + i;
+        quantity = document.getElementById('qname').value;
+        total = (quantity * menuItems[i].cost).toFixed(2);
+        console.log(quantity + " " + total);
+        tcost = document.getElementById(i).getElementsByClassName("totalCost")[0];
+        console.log("old: " + tcost.getElementsByTagName("input")[0].value);
+        tcost.getElementsByTagName("input")[0].value = total;
+        console.log("new: " + tcost.getElementsByTagName("input")[0].value);
+    }
     updateTotal();
 }
 
