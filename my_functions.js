@@ -2,12 +2,13 @@
 
 /* add event listeners once elements are loaded */
 function load() {
-    document.getElementById("radio").addEventListener('click', reveal());
+    $('input[type=radio][name=p_or_d]').on('change', reveal());
+    /*document.getElementById("radio").addEventListener('click', reveal());*/
     for (var i = 0; i < menuItems.length; i++) {
         qname = "quan" + i
         document.getElementById(qname).addEventListener("change", updateCost(qname));
     }
-    document.addEventListener("submit", verify());
+    $('input[type=button]').on('click', validate());
 }
 
 /* unhides address inputs when change is made from pickup to delivery */
