@@ -33,7 +33,7 @@ function updateCost()
     for (let i = 0; i < menuItems.length; i++) {
         qname = 'quan' + i;
         console.log($('#' + qname).val());
-        quantity = parseInt($('#' + qname).val());
+        quantity = parseFloat($('#' + qname).val());
         total = (quantity * menuItems[i].cost).toFixed(2);
         console.log(quantity + " " + total);
         tcost = document.getElementById(i).getElementsByClassName("totalCost")[0];
@@ -51,13 +51,13 @@ function updateTotal()
     for (i = 0; i < menuItems.length; i++) {
         tcost = document.getElementById(i).getElementsByClassName("totalCost")[0];
         cost = tcost.getElementsByTagName("input")[0].value;
-        sum += parseInt(cost);
+        sum += parseFloat(cost);
     }
     console.log(sum);
     document.getElementById("subtotal").value = sum;
     ttax = (0.0625 * document.getElementById("subtotal").value).toFixed(2);
     document.getElementById("tax").value = ttax;
-    document.getElementById("total").value = parseInt(sum) + parseInt(ttax);
+    document.getElementById("total").value = parseFloat(sum) + parseFloat(ttax);
 }
 
 function verify()
