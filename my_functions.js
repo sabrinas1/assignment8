@@ -16,10 +16,11 @@ function reveal()
 {
     var obj = document.getElementsByClassName("address");
     for ( let element of obj) {
+        console.log(element.style.visibility);
         if (element.getAttribute("style") != "hidden") {
             element.setAttribute("style", "visibility: hidden");
         } else if (element.getAttribute("style") === "hidden") {
-            element.removeAttribute("style");
+            element.setAttribute("style", "visibility: inherit");
         }
     }
 }
