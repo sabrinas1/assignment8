@@ -32,8 +32,7 @@ function updateCost(qname = "")
 {
     console.log(qname);
     index = parseInt(String((qname).replace(/[^0-9]/g, "")));
-    select = document.getElementsByClassName('selectQuantity')[0];
-    quantity = select.getElementById(qname).value;
+    quantity = document.getElementById('qname').value;
     total = (quantity * menuItems[index].cost).toFixed(2);
     console.log(quantity + " " + total);
     tcost = document.getElementById(index).getElementsByClassName("totalCost")[0];
