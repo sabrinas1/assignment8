@@ -14,6 +14,7 @@ function load() {
     console.log("listeners set");
 }
 
+/* unhides address inputs when change is made from pickup to delivery */
 function reveal()
 {
     var obj = document.getElementsByClassName("address");
