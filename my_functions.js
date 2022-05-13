@@ -54,7 +54,7 @@ function updateTotal()
         sum += parseFloat(cost);
     }
     console.log(sum);
-    document.getElementById("subtotal").value = sum;
+    document.getElementById("subtotal").value = sum.toFixed(2);
     ttax = (0.0625 * document.getElementById("subtotal").value).toFixed(2);
     document.getElementById("tax").value = ttax;
     document.getElementById("total").value = parseFloat(sum) + parseFloat(ttax);
