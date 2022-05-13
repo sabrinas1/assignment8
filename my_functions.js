@@ -76,7 +76,7 @@ function verify()
         return;
     }
 
-    currTime = Date.now();
+    currTime = new Date();
     currHour = currTime.getHours();
     currMinute = currTime.getMinutes();
 
