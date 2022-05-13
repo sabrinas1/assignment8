@@ -14,13 +14,11 @@ $(document).ready(function () {
 /* unhides address inputs when change is made from pickup to delivery */
 function reveal()
 {
-    console.log("reveal");
     var obj = document.getElementsByClassName("address");
     for ( let element of obj) {
-        console.log(element + ", " + element.style + ", " + element.style.visibility);
-        if (element.style.visibility != "hidden") {
+        if (element.setAttribute("style") != "hidden") {
             element.setAttribute("style", "visibility: hidden");
-        } else if (element.style.visibility === "hidden") {
+        } else if (element.setAttribute("style") === "hidden") {
             element.setAttribute("style", "visibility: visible");
         }
     }
