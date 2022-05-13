@@ -11,14 +11,12 @@ function load() {
         document.getElementById(qname).addEventListener("change", updateCost(qname));
     }
     document.addEventListener("submit", verify());
-    console.log("listeners set");
 }
 
 /* unhides address inputs when change is made from pickup to delivery */
 function reveal()
 {
     var obj = document.getElementsByClassName("address");
-    console.log("reveal");
     for (var i = 0; i < obj.length; i++) {
         if (obj[i].style != "visibility: hidden") {
             obj[i].setAttribute("style", "visibility: hidden");
@@ -35,8 +33,9 @@ function updateCost(qname = "")
     quantity = document.getElementById(qname).value;
     total = (quantity * menuItems[index].cost).toFixed(2);
     tcost = document.getElementById(index).getElementsByClassName("totalCost")[0];
-    console.log(tcost);
+    console.log("old: " + tcost.getElementsByTagName("input")[0].value);
     tcost.getElementsByTagName("input")[0].setAttribute("value", total);
+    console.log("new: " + tcost.getElementsByTagName("input")[0].value);
     updateTotal();
 }
 
@@ -47,8 +46,7 @@ function updateTotal()
     for (i = 0; i < menuItems.length; i++) {
         tcost = document.getElementById(i).getElementsByClassName("totalCost")[0];
         cost = tcost.getElementsByTagName("input")[0].value;
-        console.log(cost);
-        sum += cost;
+        sum += parseInt(cost);
     }
     console.log(sum);
     document.getElementById("subtotal").setAttribute("value", parseInt(sum));
