@@ -27,7 +27,7 @@ function updateCost(qname = "")
 function updateTotal()
 {
     console.log("update total");
-    sum = 0;
+    var sum = 0;
     for (i = 0; i < menuItems.length; i++) {
         console.log(sum);
         sum += document.getElementById(i).getElementsByClassName("totalCost")[0].value;
