@@ -9,7 +9,7 @@ $(document).ready(function () {
     $('input[type=radio][name=p_or_d]').on('change', function() {reveal();});
     for (var i = 0; i < menuItems.length; i++) {
         qname = "quan" + i
-        $('#qname').on("change", function () {updateCost(qname);});
+        $('#' + qname).on("change", function () {updateCost(qname);});
     }
     $('input[type=button]').on('click', function () {verify();});
 });
@@ -19,7 +19,6 @@ function reveal()
 {
     var obj = document.getElementsByClassName("address");
     for ( let element of obj) {
-        console.log(element.style.visibility);
         if (element.style.visibility === 'hidden') {
             element.style.visibility = 'visible';
         } else {
@@ -37,7 +36,7 @@ function updateCost(qname = "")
     total = (quantity * menuItems[index].cost).toFixed(2);
     tcost = document.getElementById(index).getElementsByClassName("totalCost")[0];
     console.log("old: " + tcost.getElementsByTagName("input")[0].value);
-    tcost.getElementsByTagName("input")[0].setAttribute("value", total);
+    tcost.getElementsByTagName("input")[0].value = total;
     console.log("new: " + tcost.getElementsByTagName("input")[0].value);
     updateTotal();
 }
@@ -52,10 +51,10 @@ function updateTotal()
         sum += parseInt(cost);
     }
     console.log(sum);
-    document.getElementById("subtotal").setAttribute("value", parseInt(sum));
+    document.getElementById("subtotal").value = sum;
     ttax = (0.0625 * document.getElementById("subtotal").value).toFixed(2);
-    document.getElementById("tax").setAttribute("value", parseInt(ttax));
-    document.getElementById("total").setAttribute("value", parseInt(sum + ttax));
+    document.getElementById("tax").value = ttax;
+    document.getElementById("total").value = sum + ttax;
 }
 
 function verify()
