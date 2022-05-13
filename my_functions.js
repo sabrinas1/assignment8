@@ -26,6 +26,7 @@ function reveal()
     }
 }
 
+/* updates total cost for item when quantity changes */
 function updateCost(qname = "")
 {
     console.log("update costs");
