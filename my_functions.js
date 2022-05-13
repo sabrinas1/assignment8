@@ -29,8 +29,10 @@ function updateTotal()
     console.log("update total");
     sum = 0;
     for (i = 0; i < menuItems.length; i++) {
+        console.log(sum);
         sum += document.getElementById(i).getElementsByClassName("totalCost")[0].value;
     }
+    console.log(sum);
     document.getElementById("subtotal").setAttribute("value", parseInt(sum));
     ttax = (0.0625 * document.getElementById("subtotal").value).toFixed(2);
     document.getElementById("tax").setAttribute("value", parseInt(ttax));
