@@ -80,8 +80,8 @@ function verify()
     currHour = currTime.getHours();
     currMinute = currTime.getMinutes();
 
-    method = document.p_or_d[0];
-    if (method.checked === "checked") {
+    method = $('input[type=radio][name=p_or_d][checked=checked]').value;
+    if (method === 'pickup') {
         newMin = currMinute + 15;
     } else {
         newMin = currMinute + 30;
