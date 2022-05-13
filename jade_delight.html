@@ -61,8 +61,6 @@
         	<th>Total Cost</th>
     	</tr>
 		<script>
-    		
-    		console.log("making table");
     		var s = "";
     		for (i=0; i< menuItems.length; i++)
     		{
@@ -73,9 +71,7 @@
 	    		s += td("$<input type='text' name='cost' value=0.00 />", "totalCost");
 	    		s+= "</tr>";
     		}
-    		console.log("writing");
     		document.writeln(s);
-    		console.log("wrote");
 		</script>
 
 	</table>
@@ -94,13 +90,14 @@
 	</form>
 	<script>
 		document.onload = function() {
+			console.log("load");
 			document.getElementsByName('p_or_d').addEventListener('change', reveal());
 			for (var i = 0; i < menuItems.length; i++) {
 				qname = "quan" + i
 				document.getElementById(qname).addEventListener("change", updateCost(qname));
 			}
 			document.addEventListener("submit", verify());
-			
+			console.log("listeners set");
 		}
 	</script>
 
