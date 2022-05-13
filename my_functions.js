@@ -7,7 +7,6 @@ $(document).ready(function () {
         element.style.visibility = 'hidden';
     }
     $('input[type=radio][name=p_or_d]').on('change', function() {reveal();});
-    /*document.getElementById("radio").addEventListener('click', reveal());*/
     for (var i = 0; i < menuItems.length; i++) {
         qname = "quan" + i
         $('#qname').on("change", function () {updateCost(qname);});
