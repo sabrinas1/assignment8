@@ -77,13 +77,9 @@
     		document.writeln(s);
     		console.log("wrote");
     		document.addEventListener("submit", verify());
-    		for (var i = 0; i < menuItems.length; i++) {
-				qname = "quan" + i
-				document.getElementById(qname).addEventListener("change", updateCost(qname));
-    		}
 			document.getElementsByName('p_or_d').addEventListener('change', reveal());
 		</script>
-		
+
 	</table>
 	<p class="subtotal totalSection"><label>Subtotal:</label> 
 		$ <input type="text"  name='subtotal' id="subtotal" value=0.00 />
@@ -98,6 +94,12 @@
 	<input type = "button" value = "Submit Order" />
 
 	</form>
+	<script>
+		for (var i = 0; i < menuItems.length; i++) {
+				qname = "quan" + i
+				document.getElementById(qname).addEventListener("change", updateCost(qname));
+			}
+	</script>
 
 </body>
 </html>
