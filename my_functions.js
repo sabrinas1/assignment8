@@ -2,7 +2,7 @@
 
 /* add event listeners once elements are loaded */
 function load() {
-    document.getElementById("radio").addEventListener('change', reveal());
+    document.getElementById("radio").addEventListener('click', reveal());
     for (var i = 0; i < menuItems.length; i++) {
         qname = "quan" + i
         document.getElementById(qname).addEventListener("change", updateCost(qname));
