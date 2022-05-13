@@ -28,9 +28,10 @@
 	{
 		var t= "";
 		t = "<select name='" + name + "' size='1' id='" + name + "'>";
-		for (j=minRange; j<=maxRange; j++)
-	    	t += "<option>" + j + "</option>";
-			t+= "</select>"; 
+		for (j=minRange; j<=maxRange; j++) {
+	    	t += "<option value=" + j + ">" + j + "</option>";
+		}
+		t += "</select>";
 		return t;
 	}
 
