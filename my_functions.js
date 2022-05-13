@@ -45,9 +45,10 @@ function updateTotal()
     console.log("update total");
     var sum = 0;
     for (i = 0; i < menuItems.length; i++) {
-        cost = document.getElementById(i).getElementsByClassName("totalCost");
+        tcost = document.getElementById(i).getElementsByClassName("totalCost")[0];
+        cost = tcost.getElementsByTagName("input")[0].value;
         console.log(cost);
-        sum += cost.value;
+        sum += cost;
     }
     console.log(sum);
     document.getElementById("subtotal").setAttribute("value", parseInt(sum));
