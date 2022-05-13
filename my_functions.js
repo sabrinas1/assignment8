@@ -8,7 +8,7 @@ $(document).ready(function () {
         qname = "quan" + i
         $('#qname').on("change", updateCost(qname));
     }
-    $('input[type=button]').on('click', validate());
+    $('input[type=button]').on('click', verify());
 });
 
 /* unhides address inputs when change is made from pickup to delivery */
