@@ -89,17 +89,7 @@
 
 	</form>
 	<script>
-		console.log("here");
-		
-			console.log("load");
-			document.getElementsByName('p_or_d').addEventListener('change', reveal());
-			for (var i = 0; i < menuItems.length; i++) {
-				qname = "quan" + i
-				document.getElementById(qname).addEventListener("change", updateCost(qname));
-			}
-			document.addEventListener("submit", verify());
-			console.log("listeners set");
-		
+		window.onload(load());
 	</script>
 
 </body>
