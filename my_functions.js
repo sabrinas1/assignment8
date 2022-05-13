@@ -2,13 +2,13 @@
 
 /* add event listeners once elements are loaded */
 $(document).ready(function () {
-    $('input[type=radio][name=p_or_d]').on('change', reveal());
+    $('input[type=radio][name=p_or_d]').on('change', function() {reveal();});
     /*document.getElementById("radio").addEventListener('click', reveal());*/
     for (var i = 0; i < menuItems.length; i++) {
         qname = "quan" + i
-        $('#qname').on("change", updateCost(qname));
+        $('#qname').on("change", function () {updateCost(qname);});
     }
-    $('input[type=button]').on('click', verify());
+    $('input[type=button]').on('click', function () {verify();});
 });
 
 /* unhides address inputs when change is made from pickup to delivery */
