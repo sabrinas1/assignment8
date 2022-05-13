@@ -21,9 +21,9 @@ function reveal()
     for ( let element of obj) {
         console.log(element.style.visibility);
         if (element.style.visibility === 'hidden') {
-            element.style.visibility == 'visible';
+            element.style.visibility = 'visible';
         } else {
-            element.style.visibility == 'hidden';
+            element.style.visibility = 'hidden';
         }
     }
 }
