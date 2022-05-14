@@ -101,26 +101,22 @@ function verify()
 
     alert("Thank you for ordering from Jade Delight!");
 
-    var summary = window.open("summary.html");
+    var summary = window.open();
 
-    for (let i = 0; i < menuItems.length; i++) {
-        qname = 'quan' + i;
-        quantity = summary.document.getElementById(i).getElementsByClassName("quantity")[0];
-        quantity.value = parseFloat($('#' + qname).val());
-        tcost = summary.document.getElementById(i).getElementsByClassName("totalCost")[0];
-        tcost.getElementsByTagName("input")[0].value = document.getElementById(i).getElementsByClassName("totalCost")[0].getElementsByTagName("input")[0].value;
+    s = "<body>";
+    s += "<h1>Jade Delight</h1><br />";
+    for (var i = 0; i < menuItems.length; i++) {
+        tcost = document.getElementById(i).getElementsByClassName("totalCost")[0]
+        if (tcost.value > 0) {
+            s += parseFloat($('#' + qname).val()) + menuItems[i].name + ":  $" + tcost.value + "<br />";
+        }
     }
 
-    var sum = 0;
-    for (i = 0; i < menuItems.length; i++) {
-        tcost = summary.document.getElementById(i).getElementsByClassName("totalCost")[0];
-        cost = tcost.getElementsByTagName("input")[0].value;
-        sum += parseFloat(cost);
-    }
-    summary.document.getElementById("subtotal").value = sum.toFixed(2);
-    ttax = (0.0625 * sum).toFixed(2);
-    summary.document.getElementById("tax").value = ttax;
-    summary.document.getElementById("total").value = parseFloat(sum) + parseFloat(ttax);
+    s += "Subtotal: $" + document.getElementById("subtotal").value + "<br />";
+    s += "Mass Tax 6.25%: $" + document.getElementById("tax").value + "<br />";
+    s += "Total: $" + document.getElementById("total").value + "<br />";
+    s += "Order Ready By: " + newHour + ":" + newMin + "<br /></body>";
 
-    summary.documentl.getElementById("time").value = newHour + ":" + newMin;
+
+    summary.document.writeln(s);
 }
