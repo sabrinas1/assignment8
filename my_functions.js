@@ -93,6 +93,9 @@ function verify()
         newHour = currHour;
     }
 
+    newHour = newHour % 12;
+    if (newHour === 0) newHour = 12;
+
     total = $('#total').val();
     if (total == 0) {
         alert("Invalid Order: No items selected");
